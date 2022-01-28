@@ -6,6 +6,7 @@ type TreeNode struct {
 	Right *TreeNode
 }
 
+// 二叉树前序遍历
 func preorderTravelsal(root *TreeNode) []int {
 	res := make([]int, 0)
 	var preorder func(*TreeNode)
