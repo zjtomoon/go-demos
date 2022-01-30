@@ -1,7 +1,8 @@
 package main
 
-// 给你一个整数数组 nums 和一个整数 k ，请你统计并返回该数组中和为 k 的连续子数组的个数。
+import "fmt"
 
+// 给你一个整数数组 nums 和一个整数 k ，请你统计并返回该数组中和为 k 的连续子数组的个数。
 
 //pre[i] == pre[i-1] + nums[i]
 
@@ -44,8 +45,18 @@ func subarraySum(nums []int,k int) int {
 	m[0] = 1
 	for i := 0; i < len(nums); i++ {
 		pre += nums[i]
+		fmt.Println("pre = ",pre)
 		count += m[pre-k]
+		fmt.Println("m[pre-k] = ",m[pre-k])
 		m[pre]++
+		fmt.Println("m[pre] = ",m[pre])
 	}
+	fmt.Println("m = ",m)
 	return count
+}
+
+func main()  {
+	nums := [...]int{2,2,3,4,5,6,7}
+	count := subarraySum(nums[:],7)
+	fmt.Println(count)
 }
