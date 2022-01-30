@@ -7,6 +7,7 @@ package main
 
 // [j..i]子数组和为k
 // pre[i] - pre[j-1] == k
+// pre[j-1] == pre[i] - k
  
 func subarraySum(nums []int,k int) int {
 	//枚举法
@@ -22,5 +23,18 @@ func subarraySum(nums []int,k int) int {
 	// }
 	// return count
 
-
+	// 前缀和 + 哈希优化
+	var pre int
+	var count int
+	m := make(map[int]int, 0)
+	// 0 的前缀和是1
+	m[0] = 1
+	for i := 0 ; i < len(nums); i++ {
+		pre += nums[i]
+		if _,ok := m[pre-k];ok  {
+			count += m[pre-k]
+		}
+		m[pre] += 1
+	}
+	return count
 }
