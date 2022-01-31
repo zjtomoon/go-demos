@@ -65,3 +65,34 @@ package main
 	backTrack()
 	return res
 } */
+
+
+var res [][]int
+func permute(nums []int) [][]int  {
+	res = [][]int{}
+	visited := make(map[int]bool)
+	backTrace(nums,len(nums),[]int{},visited)
+	return res
+}
+
+func backTrace(nums []int,numLen int,path []int,visited map[int]bool)  {
+	//终止条件
+	if len(path) == numLen {
+		p := make([]int,numLen)
+		copy(p,path)
+		res = append(res,p)
+		return
+	}
+
+	// 循环
+	for i:=0;i < numLen ;i++  {
+		if visited[nums[i]] {
+			continue
+		}
+		visited[nums[i]] = true
+		path = append(path,nums[i])
+		backTrace(nums,numLen,path,visited)
+		visited[nums[i]] =false
+		path = path[:len(path)-1]
+	}
+}
