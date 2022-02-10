@@ -4,9 +4,12 @@
 
 ## 个人信息
 
-* 性 别：男&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;年 龄：26
-* 手 机：18915725808&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;   邮 箱：2769268328@qq.com
-* 专 业：工程力学&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; &emsp;&emsp;&emsp; 岗 位：Go语言工程师
+* 性 别：男
+* 年 龄：26
+* 手 机：18915725808
+* 邮 箱：2769268328@qq.com
+* 专 业：工程力学
+* 应聘 岗 位：Go语言工程师
 
 ## 工作及教育经历
 
@@ -23,17 +26,17 @@
 * 熟悉redis，包括redis的持久化操作、分布式集群的搭建、熟悉redis.conf的配置
 * 熟悉mysql数据库，熟悉sql语句，了解innodb存储引擎
 * 熟悉各种linux发行版，熟练使用linux命令行进行项目部署和维护；了解使用源码编译安装linux软件，并能够排除编译过程中遇到的问题，实现开发环境的搭建
-* 熟练使用vim、emacs编辑器
-* 熟悉版本管理工具git,了解git分支管理和合并
+* 熟练使用vim/neovim、gnu-emacs 等linux编辑器
+* 熟悉版本管理工具git,包括git tag、branch、checkout等操作
+* 了解svn版本管理工具
 * 熟悉markdown文档的编写
 * 掌握基础数据结构和算法的基本原理
-* 了解Rust编程语言
+* 了解Rust、lua等编程语言
+* 熟悉reactjs前端开发框架
 * 英语技能：六级，能够无障碍阅读开源项目的英文文档
 
-## 项目经验
+## 自我评价
 
-
-
-## 其他信息
-
-* 
+* 热衷于新技术的学习，时常关注技术社区和论坛
+* 喜欢使用go和rust语言，rust还在进一步学习中
+* 业余时间能够花时间学习技术，提高技术水平

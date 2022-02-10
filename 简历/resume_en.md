@@ -1,0 +1,42 @@
+<center>
+     <h1>FengWeiming</h1>
+ </center>
+
+## 个人信息
+
+* Gender：male
+* age：26
+* phone：18915725808
+* email：2769268328@qq.com
+* 专 业：工程力学
+* 岗 位：Go语言工程师
+
+## 工作及教育经历
+
+* 上海中畅信息科技有限公司            2021.1 至 2021.6        国泰君安-全连接项目  前端开发
+* 上海泽众软件有限公司                    2020.8 至 2020.12      兴业银行子公司授信系统功能测试   
+* 湖南大学                                           2014.9 至 2018.9        工程力学专业-本科        
+
+## 专业技能
+
+* 熟练掌握go语言，了解go语言的goroutine、net/http、channel、context等的原理，熟悉go标准库
+* 熟悉go语言开发第三方库，包括grpc、gorm、protobuf、redigo等
+* 熟悉go语言web框架beego
+* 熟悉使用docker进行项目的部署
+* 熟悉redis，包括redis的持久化操作、分布式集群的搭建、熟悉redis.conf的配置
+* 熟悉mysql数据库，熟悉sql语句，了解innodb存储引擎
+* 熟悉各种linux发行版，熟练使用linux命令行进行项目部署和维护；了解使用源码编译安装linux软件，并能够排除编译过程中遇到的问题，实现开发环境的搭建
+* 熟练使用vim/neovim、gnu-emacs 等linux编辑器
+* 熟悉版本管理工具git,包括git tag、branch、checkout等操作
+* 了解svn版本管理工具
+* 熟悉markdown文档的编写
+* 掌握基础数据结构和算法的基本原理
+* 了解Rust、lua等编程语言
+* 熟悉reactjs前端开发框架
+* 英语技能：六级，能够无障碍阅读开源项目的英文文档
+
+## 自我评价
+
+* 热衷于新技术的学习，时常关注技术社区和论坛
+* 喜欢使用go和rust语言，rust还在进一步学习中
+* 业余时间能够花时间学习技术，提高技术水平
