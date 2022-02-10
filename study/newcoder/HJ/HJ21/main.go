@@ -14,6 +14,9 @@ func main() {
 	for input.Scan() {
 		str = append(str, input.Text())
 	}
+	for i := 0; i < len(str); i++ {
+		deCrypt(str[i])
+	}
 }
 
 func deCrypt(str string) {
@@ -26,6 +29,7 @@ func deCrypt(str string) {
 		"jkl":  "5",
 		"mno":  "6",
 		"pqrs": "7",
+		"tuv":  "8",
 		"wxyz": "9",
 	}
 
