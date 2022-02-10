@@ -14,15 +14,14 @@ func main() {
 	for input.Scan() {
 		str = append(str, input.Text())
 	}
-	for i := 0; i < len(str); i++ {
-		deCrypt(str[i])
+	for loop := 0; loop < len(str); loop++ {
+		deCrypt(str[loop])
 	}
 }
 
 func deCrypt(str string) {
 	dic := map[string]string{
 		"1":    "1",
-		"0":    "0",
 		"abc":  "2",
 		"def":  "3",
 		"ghi":  "4",
@@ -31,25 +30,26 @@ func deCrypt(str string) {
 		"pqrs": "7",
 		"tuv":  "8",
 		"wxyz": "9",
+                "0":    "0",
 	}
 
-	for i := 0; i < len(str); i++ {
+	for loop := 0; loop < len(str); loop++ {
 		switch {
-		case str[i] >= 'A' && str[i] <= 'Z':
-			if str[i] == 'Z' {
-				fmt.Println("a")
+		case str[loop] >= 'A' && str[loop] <= 'Z':
+			if str[loop] == 'Z' {
+				fmt.Print("a")
 			} else {
-				fmt.Print(strings.ToLower(string(str[i] + 1)))
+				fmt.Print(strings.ToLower(string(str[loop] + 1)))
 			}
-		case str[i] >= 'a' && str[i] <= 'z':
+		case str[loop] >= 'a' && str[loop] <= 'z':
 			for k, v := range dic {
-				if strings.Contains(k, string(str[i])) {
+				if strings.Contains(k, string(str[loop])) {
 					fmt.Print(v)
 				}
 			}
 		default:
-			fmt.Print(string(str[i]))
+			fmt.Print(string(str[loop]))
 		}
 	}
-	fmt.Println()
+	fmt.Print("\n")
 }
