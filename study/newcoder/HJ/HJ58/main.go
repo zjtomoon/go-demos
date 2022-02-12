@@ -41,5 +41,11 @@ func main() {
 		sort.Ints(arr)
 		//fmt.Println(arr[:k])
 		//整型数组转为字符串数组并打印输出
+		var arr2 []string
+		for i := 0; i < len(arr); i++ {
+			tmp := strconv.Itoa(arr[i])
+			arr2 = append(arr2, tmp)
+		}
+		fmt.Println(strings.Join(arr2[:k], " "))
 	}
 }
