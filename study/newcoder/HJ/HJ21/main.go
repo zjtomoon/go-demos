@@ -30,7 +30,7 @@ func deCrypt(str string) {
 		"pqrs": "7",
 		"tuv":  "8",
 		"wxyz": "9",
-                "0":    "0",
+		"0":    "0",
 	}
 
 	for loop := 0; loop < len(str); loop++ {
