@@ -17,11 +17,12 @@ func main() {
 
 	for input.Scan() {
 		result := input.Text()
-		arr1 := strings.Trim(result, " ")
-		arr2 := strings.Split(result, " ")
+		arr1 := strings.Trim(result, " ")  //返回字符串
+		arr2 := strings.Split(result, " ") //返回字符串数组
 		fmt.Println("arr1 = ", arr1)
+		fmt.Println("typeof arr1:", reflect.TypeOf(arr1))
 		fmt.Println("arr2 = ", arr2)
-		fmt.Println(reflect.TypeOf(arr2))
+		fmt.Println("typeof arr2:", reflect.TypeOf(arr2))
 		var arr3 []int
 
 		//输入的字符串数字转为整形数组
