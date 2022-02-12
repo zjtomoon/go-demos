@@ -35,6 +35,11 @@ func main() {
 			tmp, _ := strconv.Atoi(input2_split[i])
 			arr = append(arr, tmp)
 		}
+		if n != len(arr) || k > n {
+			break
+		}
 		sort.Ints(arr)
+		//fmt.Println(arr[:k])
+		//整型数组转为字符串数组并打印输出
 	}
 }
