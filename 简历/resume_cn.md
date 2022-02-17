@@ -17,7 +17,15 @@
 * 上海泽众软件有限公司                    2020.8 至 2020.12      兴业银行子公司授信系统功能测试   
 * 湖南大学                                           2014.9 至 2018.9        工程力学专业-本科        
 
-## 专业技能
+## 项目经验
+
++ 使用lua编程语言配置neovim，使neovim通过各语言提供的语言服务器(LSP) ，实现类似vscode、jetbrains全家桶等工具的代码提示功能，提升代码编辑体验。
+  
+  > 项目地址：https://github.com/zjtomoon/lua-neovim.git
+
++ 使用beego编写个人博客项目。
+
+## 计算机技能
 
 * 熟练掌握go语言，了解go语言的goroutine、net/http、channel、context等的原理，熟悉go标准库
 * 熟悉go语言开发第三方库，包括grpc、gorm、protobuf、redigo等
@@ -32,7 +40,7 @@
 * 熟悉markdown文档的编写
 * 掌握基础数据结构和算法的基本原理
 * 了解Rust、lua等编程语言
-* 熟悉reactjs前端开发框架
+* 熟悉reactjs、Angular前端开发框架
 * 英语技能：六级，能够无障碍阅读开源项目的英文文档
 
 ## 自我评价
