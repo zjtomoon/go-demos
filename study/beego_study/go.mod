@@ -1,4 +1,4 @@
-module go-demos/study/beego_study
+module beego_study
 
 go 1.15
 
