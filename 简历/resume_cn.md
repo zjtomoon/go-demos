@@ -10,7 +10,7 @@
 * 手 机：18915725808
 * 邮 箱：2769268328@qq.com
 * 专 业：工程力学
-* 应聘 岗 位：Go语言工程师
+* 应聘 岗 位：Go语言开发
 
 ## 工作及学习经历
 
@@ -35,6 +35,7 @@
 + 2018年7月         校招进入中国建筑一局 
   
   + 岗位：工程技术员
+
 + 2014年9月至2018年6月  湖南大学就读工程力学本科
 
 ## 项目经验
@@ -55,15 +56,16 @@
 * 熟悉使用docker进行项目的部署
 * 熟悉redis，包括redis的持久化操作、分布式集群的搭建、熟悉redis.conf的配置
 * 熟悉mysql数据库，熟悉sql语句，了解innodb存储引擎
-* 熟悉各种linux发行版
-* 熟悉nginx http代理服务器
+* 熟悉mongodb数据库
+* 熟悉各种linux发行版，包括fedora、centos、ubuntu、rockylinux、manjaro、Archlinux
+* 熟悉nginx，包括nginx常用命令、nginx.conf的配置
 * 熟练使用vim/neovim、gnu-emacs 等linux编辑器
 * 熟悉版本管理工具git,包括git tag、branch、checkout等操作
 * 了解svn版本管理工具
 * 熟悉markdown文档的编写
 * 掌握基础数据结构和算法的基本原理
 * 了解Rust、lua等编程语言
-* 熟悉reactjs、Angular前端开发框架
+* 熟悉reactjs前端开发框架
 * 英语技能：六级，能够无障碍阅读开源项目的英文文档
 
 ## 自我评价
@@ -71,5 +73,3 @@
 * 热衷于新技术的学习，时常关注技术社区和论坛
 * 喜欢使用go和rust语言，rust还在进一步学习中
 * 业余时间能够花时间学习技术，提高技术水平
-
-
