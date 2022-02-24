@@ -17,7 +17,7 @@ func main() {
 		fmt.Println("Golang")
 	}
 	nums := [...]int{1, 2, 3}
-	contains := Contains_Int(nums[:], 2)
+	contains := Contains_Int(nums[:], 4)
 	fmt.Println(contains)
 }
 
