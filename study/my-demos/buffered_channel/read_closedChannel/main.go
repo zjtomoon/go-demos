@@ -18,5 +18,5 @@ func main() {
 	for val := range ch {
 		fmt.Println(val)
 	}
-	ch <- 6 //panic : send on closed channel
+	//ch <- 6 //panic : send on closed channel
 }
