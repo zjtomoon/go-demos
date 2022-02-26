@@ -34,33 +34,21 @@ func main() {
 	collection := client.Database("temp").Collection("aaa")
 	//fmt.Println(collection)
 
-	filter := bson.D{{"name", "Ash"}}
+	// 为字段建立索引
+	mod := mongo.IndexModel{
+		Keys: bson.M{
+			"name": -1,
+		},
+		Options: options.Index().SetUnique(true),
+	}
 
-	// 查询文档
-	var result Trainer
-	err = collection.FindOne(context.TODO(), filter).Decode(&result)
+	_, err = collection.Indexes().CreateOne(context.TODO(), mod)
 	if err != nil {
 		log.Fatal(err)
 	}
-	fmt.Printf("Found a single document: %+v\n", result)
 
-	// 查询多个文档
-	one, _ := collection.Find(context.TODO(), filter)
-	defer func() {
-		if err := one.Close(context.TODO()); err != nil {
-			log.Fatal(err)
-		}
-	}()
-
-	c := []Trainer{}
-	_ = one.All(context.TODO(), &c)
-	for _, r := range c {
-		fmt.Println(r)
-	}
-
-	//删除文档
-	deleteResult, err := collection.DeleteMany(context.TODO(), bson.D{{}})
-	fmt.Println(deleteResult.DeletedCount)
+	indexes, err := collection.Indexes().ListSpecifications(context.TODO())
+	fmt.Println(indexes)
 
 	err = client.Disconnect(context.TODO())
 	if err != nil {
