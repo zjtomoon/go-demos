@@ -16,7 +16,7 @@ type Trainer struct {
 }
 
 func main() {
-	clientOptions := options.Client().ApplyURI("mongodb://admin:123456@121.4.62.197:27017")
+	clientOptions := options.Client().ApplyURI("mongodb://admin:123456@127.0.0.1:27017")
 
 	client, err := mongo.Connect(context.TODO(), clientOptions)
 
