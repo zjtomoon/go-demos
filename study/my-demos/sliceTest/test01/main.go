@@ -7,7 +7,7 @@ func main() {
 	//sli := make([]int,5,5)
 	//fmt.Printf("adress = %p\n",sli)
 	//fmt.Println(sli)
-	sli := arr[:3]
+	sli := arr[:3] // 切片遵循左闭右开的规则
 	fmt.Println("arr = ", arr)
 	fmt.Println("sli = ", sli)
 	fmt.Println("length of sli = ", len(sli))
