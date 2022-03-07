@@ -2,6 +2,9 @@ package LRU_structure
 
 import "container/list"
 
+//  这里我们使用链表数据结构，可以省去设置访问时间t字段。
+//  我们可以将经常访问的数据插入链表头，而链表尾部的数据自然就成为最久未访问的数据。
+
 // 定义LRU数据结构
 type keyLru struct {
 	limit    int                      // 缓存数量
