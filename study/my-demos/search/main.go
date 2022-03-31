@@ -2,17 +2,15 @@ package main
 
 import (
 	"fmt"
-	"gopkg.in/ini.v1"
 	"io/ioutil"
-	"os"
 	"runtime"
 	"strings"
 	"time"
 )
 
 type searchReq struct {
-	Path     string
-	Filename string
+	Path     string `json:"path"`
+	Filename string `json:"filename"`
 }
 
 type searchRes struct {
@@ -32,15 +30,7 @@ var foundMatch = make(chan bool)
 
 func main() {
 
-	cfg, err := ini.Load("./config.ini")
-	Req := new(searchReq)
-	err = cfg.MapTo(Req)
-	if err != nil {
-		fmt.Println("Read config file failed due to error:", err)
-		os.Exit(1)
-	}
-	fmt.Println(Req.Filename, Req.Path)
-
+	// 参考: https://blog.csdn.net/benben_2015/article/details/79134734
 	for {
 		fmt.Println("current time :", time.Now())
 		searchOperator()
