@@ -39,6 +39,7 @@ func main() {
 		fmt.Println("Read config file failed due to error:", err)
 		os.Exit(1)
 	}
+	fmt.Println(Req.Filename, Req.Path)
 
 	for {
 		fmt.Println("current time :", time.Now())
