@@ -24,6 +24,7 @@ type searchRes struct {
 var matches int
 var query = "hello.ts"
 
+var filepath string
 var workerCount = 0
 var maxWorkerCount = 32
 var searchRequest = make(chan string)
@@ -79,7 +80,7 @@ func waitForWorkers() {
 	}
 }
 
-func search(path string, master bool) (*searchRes) {
+func search(path string, master bool) *searchRes {
 	sysType := runtime.GOOS
 	files, err := ioutil.ReadDir(path)
 	if err == nil {
@@ -87,7 +88,11 @@ func search(path string, master bool) (*searchRes) {
 			name := file.Name()
 			if strings.Contains(name,query) {
 				matches++
-				filepath := <- searchRequest
+				if sysType == "linux" {
+					filepath = path + name + "/"
+				} else if sysType == "windows" {
+					filepath = path + name + "\"
+				}
 				return &searchRes{
 					FilePath:filepath,
 					FileSize:file.Size(), // todo: 转化成kb,mb,gb
