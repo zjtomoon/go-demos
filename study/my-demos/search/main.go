@@ -33,8 +33,8 @@ var foundMatch = make(chan bool)
 func main() {
 
 	cfg, err := ini.Load("./config.ini")
-	R := new(searchReq)
-	err = cfg.MapTo(R)
+	Req := new(searchReq)
+	err = cfg.MapTo(Req)
 	if err != nil {
 		fmt.Println("Read config file failed due to error:", err)
 		os.Exit(1)
