@@ -10,7 +10,6 @@ import (
 	"time"
 )
 
-
 type searchReq struct {
 	Path     string
 	Filename string
@@ -33,11 +32,11 @@ var foundMatch = make(chan bool)
 
 func main() {
 
-	cfg,err := ini.Load("./config.ini")
+	cfg, err := ini.Load("./config.ini")
 	R := new(searchReq)
 	err = cfg.MapTo(R)
 	if err != nil {
-		fmt.Println("Read config file failed due to error:",err)
+		fmt.Println("Read config file failed due to error:", err)
 		os.Exit(1)
 	}
 
@@ -58,7 +57,7 @@ func searchOperator() {
 	go search("D:\\workspace\\", true)
 	waitForWorkers()
 	fmt.Println(matches, "matches")
-	fmt.Println("spent time :",time.Since(start))
+	fmt.Println("spent time :", time.Since(start))
 	fmt.Println()
 	matches = 0
 }
@@ -80,23 +79,14 @@ func waitForWorkers() {
 	}
 }
 
-func search(path string, master bool) *searchRes {
+func search(path string, master bool) {
 	sysType := runtime.GOOS
 	files, err := ioutil.ReadDir(path)
 	if err == nil {
 		for _, file := range files {
 			name := file.Name()
-			if strings.Contains(name,query) {
+			if strings.Contains(name, query) {
 				matches++
-				if sysType == "linux" {
-					filepath = path + name + "/"
-				} else if sysType == "windows" {
-					filepath = path + name + "\"
-				}
-				return &searchRes{
-					FilePath:filepath,
-					FileSize:file.Size(), // todo: 转化成kb,mb,gb
-				}
 			}
 			if file.IsDir() {
 				if workerCount < maxWorkerCount {
@@ -120,5 +110,4 @@ func search(path string, master bool) *searchRes {
 			workerDone <- true
 		}
 	}
-	return nil
 }
