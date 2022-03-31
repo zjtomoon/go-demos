@@ -19,7 +19,7 @@ type searchRes struct {
 }
 
 var matches int
-var query = "hello.ts"
+var query = ".go"
 
 var filepath string
 var workerCount = 0
