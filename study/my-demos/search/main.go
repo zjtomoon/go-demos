@@ -9,6 +9,7 @@ import (
 
 func main() {
 
+	// todo 读取配置文件 选择搜索特定的目录和文件
 	jsonParse := config.NewJsonStruct()
 	v := config.SearchReq{}
 	jsonParse.Load("./config.json", &v)

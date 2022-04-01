@@ -15,7 +15,6 @@ type SearchRes struct {
 	FileSize int64
 }
 
-// todo 配置文件法/args 选择搜索特定的目录和文件
 type JsonStruct struct {
 }
 
