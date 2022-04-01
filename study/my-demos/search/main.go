@@ -9,12 +9,9 @@ import (
 
 func main() {
 
-	// 参考: https://blog.csdn.net/benben_2015/article/details/79134734
 	jsonParse := config.NewJsonStruct()
 	v := config.SearchReq{}
 	jsonParse.Load("./config.json", &v)
-	//fmt.Println(v.Filename)
-	//fmt.Println(v.Path)
 	cmd.Query = v.Filename
 	// todo 守护进程
 	for {
