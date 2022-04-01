@@ -10,9 +10,8 @@ import (
 )
 
 var matches int
-var query = ".ts"
+var Query string
 
-var filepath string
 var workerCount = 0
 var maxWorkerCount = 32
 var searchRequest = make(chan string)
@@ -21,10 +20,10 @@ var foundMatch = make(chan bool)
 
 var mtx sync.Mutex
 
-func SearchOperator() {
+func SearchOperator(path string) {
 	start := time.Now()
 	workerCount = 1
-	go search("D:\\workspace\\", true)
+	go search(path, true)
 	waitForWorkers()
 	fmt.Println(matches, "matches")
 	fmt.Println("spent time :", time.Since(start))
@@ -55,7 +54,7 @@ func search(path string, master bool) {
 	if err == nil {
 		for _, file := range files {
 			name := file.Name()
-			if strings.Contains(name, query) {
+			if strings.Contains(name, Query) {
 				mtx.Lock()
 				matches++
 				mtx.Unlock()
