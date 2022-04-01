@@ -5,11 +5,12 @@ import (
 	"io/ioutil"
 	"runtime"
 	"strings"
+	"sync"
 	"time"
 )
 
 var matches int
-var query = "hello.ts"
+var query = ".ts"
 
 var filepath string
 var workerCount = 0
@@ -17,6 +18,8 @@ var maxWorkerCount = 32
 var searchRequest = make(chan string)
 var workerDone = make(chan bool)
 var foundMatch = make(chan bool)
+
+var mtx sync.Mutex
 
 func SearchOperator() {
 	start := time.Now()
@@ -53,7 +56,9 @@ func search(path string, master bool) {
 		for _, file := range files {
 			name := file.Name()
 			if strings.Contains(name, query) {
+				mtx.Lock()
 				matches++
+				mtx.Unlock()
 			}
 			if file.IsDir() {
 				if workerCount < maxWorkerCount {
@@ -78,3 +83,6 @@ func search(path string, master bool) {
 		}
 	}
 }
+
+// todo 搜索到该文件 打印出该文件的目录地址
+// todo 搜索到文件，返回字符串
