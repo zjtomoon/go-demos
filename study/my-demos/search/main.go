@@ -6,16 +6,6 @@ import (
 	"time"
 )
 
-type searchReq struct {
-	Path     string `json:"path"`
-	Filename string `json:"filename"`
-}
-
-type searchRes struct {
-	FilePath string
-	FileSize int64
-}
-
 func main() {
 
 	// 参考: https://blog.csdn.net/benben_2015/article/details/79134734
