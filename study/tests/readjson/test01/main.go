@@ -4,18 +4,20 @@ import (
 	"encoding/json"
 	"fmt"
 	"io/ioutil"
-	"log"
-	"net/http"
 )
 
-var url string
+//type SearchReq struct {
+//	Path     string `json:"path"`
+//	Filename string `json:"filename"`
+//}
 
 type UrlStruct struct {
-	
-	urlname string `json:"urlname"`
+	UrlName string `json:"url_name"`
 }
 
-type JsonStruct struct{}
+type JsonStruct struct {
+}
+
 
 func NewJsonStruct() *JsonStruct {
 	return &JsonStruct{}
@@ -33,23 +35,9 @@ func (jst *JsonStruct) Load(filename string, v interface{}) {
 	}
 }
 
-func GetResponse(url string) {
-	resp, err := http.Get(url)
-	if err != nil {
-		log.Fatalln("failed to  get response ,err ", err)
-	}
-
-	defer resp.Body.Close()
-	body, err := ioutil.ReadAll(resp.Body)
-	fmt.Println(string(body))
-	if resp.StatusCode == 200 {
-		fmt.Println("ok")
-	}
-}
-
 func main() {
 	jsonParse := NewJsonStruct()
 	v := UrlStruct{}
 	jsonParse.Load("./config.json",&v)
-	fmt.Println(v.urlname)
+	fmt.Println(v.UrlName)
 }
