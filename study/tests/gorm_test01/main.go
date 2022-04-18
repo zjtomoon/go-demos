@@ -49,16 +49,25 @@ func main() {
 		panic("failed to connect database")
 	}
 	fmt.Println("连接数据库成功!")
-	db.Table("user2").AutoMigrate(&User{})
-	db.Table("user3").AutoMigrate(&User{})
+
+	// create
+
+	//_ = db.Table("user2").AutoMigrate(&User{})
+	//_ = db.Table("user3").AutoMigrate(&User{})
 	//user1 := User{
 	//	Id:   1,
 	//	Age:  19,
 	//	Name: "user1",
 	//}
 
-	user1 := NewUser(1, 19, "user1")
+	//user1 := NewUser(1, 19, "user1")
+	//
+	//db.Table("user2").Create(&user1)
 
-	db.Table("user2").Create(&user1)
 	//db.AutoMigrate(&User{})
+
+	// search
+	user := User{}
+	db.Table("user2").Select("name").Where("id = ?", 1).Find(&user)
+	fmt.Println(user.Name)
 }
