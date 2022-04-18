@@ -15,11 +15,13 @@ type User struct {
 	//TabName string `gorm:"_"` //忽略这个字段，给表设置名字的
 }
 
-//func NewUser(tabName string) *User {
-//	return &User{
-//		TabName:tabName,
-//	}
-//}
+func NewUser(id int, age int, name string) *User {
+	return &User{
+		Id:   id,
+		Age:  age,
+		Name: name,
+	}
+}
 
 //func (User) TableName() string {
 //	return "user_table"
@@ -49,12 +51,14 @@ func main() {
 	fmt.Println("连接数据库成功!")
 	db.Table("user2").AutoMigrate(&User{})
 	db.Table("user3").AutoMigrate(&User{})
-	user1 := User{
-		Id:   1,
-		Age:  19,
-		Name: "user1",
-	}
+	//user1 := User{
+	//	Id:   1,
+	//	Age:  19,
+	//	Name: "user1",
+	//}
 
-	db.Table("user1").Create(&user1)
+	user1 := NewUser(1, 19, "user1")
+
+	db.Table("user2").Create(&user1)
 	//db.AutoMigrate(&User{})
 }
