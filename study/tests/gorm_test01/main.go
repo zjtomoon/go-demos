@@ -6,6 +6,8 @@ import (
 	"gorm.io/gorm"
 )
 
+var db *gorm.DB
+
 type User struct {
 	Id   int
 	Age  int
@@ -43,26 +45,31 @@ func NewUser(id int, age int, name string) *User {
 //	return u.TabName
 //}
 
-func main() {
-	db, err := gorm.Open(mysql.Open("root:123456@tcp(127.0.0.1:3306)/document_server?charset=utf8mb4&parseTime=True&loc=Local"), &gorm.Config{})
+func init() {
+	// gorm正确的初始化方式
+	var err error
+	db, err = gorm.Open(mysql.Open("root:123456@tcp(127.0.0.1:3306)/document_server?charset=utf8mb4&parseTime=True&loc=Local"), &gorm.Config{})
 	if err != nil {
 		panic("failed to connect database")
 	}
 	fmt.Println("连接数据库成功!")
+}
+
+func main() {
 
 	// create
 
-	//_ = db.Table("user2").AutoMigrate(&User{})
-	//_ = db.Table("user3").AutoMigrate(&User{})
+	db.Table("user2").AutoMigrate(&User{})
+	db.Table("user3").AutoMigrate(&User{})
 	//user1 := User{
 	//	Id:   1,
 	//	Age:  19,
 	//	Name: "user1",
 	//}
 
-	//user1 := NewUser(1, 19, "user1")
+	user1 := NewUser(1, 19, "user1")
 	//
-	//db.Table("user2").Create(&user1)
+	db.Table("user2").Create(&user1)
 
 	//db.AutoMigrate(&User{})
 
