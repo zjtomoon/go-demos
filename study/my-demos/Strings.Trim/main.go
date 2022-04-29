@@ -11,6 +11,22 @@ import (
 
 // golang的strings包中的Trim的用法介绍
 func main() {
+	testSplit()
+}
+
+func testSplit()  {
+	str := "login:szf+123"
+	str1 := strings.Split(str,":")
+	str2 := strings.Trim(str,":")
+	str3 := strings.SplitAfter(str,":")
+	fmt.Println(str)
+	fmt.Println(str1)
+	fmt.Println(str2)
+	fmt.Println(str3)
+}
+
+func stdInput() {
+
 	input := bufio.NewScanner(os.Stdin)
 
 	fmt.Println("Please input your words:")
