@@ -3,3 +3,4 @@
 .vscode/
 go.sum
 *.tmp
+cmake-build-debug/
