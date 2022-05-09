@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+D:/workspace/go/src/project1/document_server/libc/sm4/sm4.c
+sm4.h
+D:/workspace/go/src/project1/document_server/libc/sm4/sm4.h
+
+D:/workspace/go/src/project1/document_server/libc/sm4/sm4.h
+stdio.h
+-
+
