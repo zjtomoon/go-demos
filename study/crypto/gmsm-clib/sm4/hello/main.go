@@ -15,20 +15,14 @@ func main() {
 	fmt.Printf("key = %v\n", key)
 	plainText := []byte("hello,sm4")
 	fmt.Println(plainText)
+	fmt.Println(string(plainText))
 	en_output := make([]byte, len(plainText))
-	fmt.Println(en_output)
 	de_output := make([]byte, len(plainText))
-	fmt.Println(de_output)
-	C.SM4_Encrypt((*C.uchar)(unsafe.Pointer(&key[0])),
-		(*C.uchar)(unsafe.Pointer(&plainText[0])),
-		(*C.uchar)(unsafe.Pointer(&en_output[0])))
+	C.SM4_Encrypt((*C.uchar)(unsafe.Pointer(&key[0])), (*C.uchar)(unsafe.Pointer(&plainText[0])), (*C.uchar)(unsafe.Pointer(&en_output[0])))
 	fmt.Println(en_output)
-	fmt.Println(string(en_output))
-	fmt.Println([]byte(en_output))
 	C.SM4_Decrypt((*C.uchar)(unsafe.Pointer(&key[0])), (*C.uchar)(unsafe.Pointer(&en_output[0])), (*C.uchar)(unsafe.Pointer(&de_output[0])))
 	fmt.Println(de_output)
 	fmt.Println(string(de_output))
-	fmt.Println([]byte(de_output))
 }
 
 // 参考: https://blog.csdn.net/woailp___2005/article/details/106144388
