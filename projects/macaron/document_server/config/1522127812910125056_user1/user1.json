@@ -1,0 +1,25 @@
+{
+"configfile": [
+{
+"no": 1,
+"file_path": "~",
+"file_name": "user1.txt",
+"update": 0,
+"content": "123"
+},
+{
+"no": 2,
+"file_path": "~",
+"file_name": "user2.txt",
+"update": 0,
+"content": "12345"
+},
+{
+"no": 3,
+"file_path": "~",
+"file_name": "user3.txt",
+"update": 0,
+"content": "123456"
+}
+]
+}

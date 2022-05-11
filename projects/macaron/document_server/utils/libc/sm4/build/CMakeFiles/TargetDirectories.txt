@@ -1,0 +1,3 @@
+D:/workspace/go/src/project1/document_server/libc/sm4/build/CMakeFiles/sm4.dir
+D:/workspace/go/src/project1/document_server/libc/sm4/build/CMakeFiles/edit_cache.dir
+D:/workspace/go/src/project1/document_server/libc/sm4/build/CMakeFiles/rebuild_cache.dir
