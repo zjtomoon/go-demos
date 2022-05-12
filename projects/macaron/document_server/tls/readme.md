@@ -1,7 +1,5 @@
 # https密钥和证书生成
 
-
-
 ## 1、创建密钥
 
 使用openssl工具生成一个RSA私钥
@@ -38,4 +36,6 @@ openssl x509 -req -days 365 -in server.csr -signkey server.key -out server.crt
 openssl x509 -in server.crt -out server.pem -outform PEM
 ```
 
+```bash
 
+```
