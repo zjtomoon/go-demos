@@ -1,0 +1,1 @@
+module "github/go-demos/study/channel/channel_mutex"
