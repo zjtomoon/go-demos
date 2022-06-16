@@ -5,11 +5,12 @@ import (
 	"os"
 	"os/exec"
 	"reflect"
+	"strconv"
 )
 
 func main() {
 	fmt.Println("封装函数调用")
-	id := "3"
+	id := 3
 	username := "demo01"
 	err := Audit(id, username)
 	if err != nil {
@@ -29,8 +30,8 @@ func main() {
 	LS("-l")
 }
 
-func Audit(id string, username string) error {
-	arg1 := id
+func Audit(id int, username string) error {
+	arg1 := strconv.Itoa(id)
 	arg2 := username
 	cmd := exec.Command("StartMysqlService.out", arg1, arg2)
 	fmt.Println(reflect.TypeOf(id))
