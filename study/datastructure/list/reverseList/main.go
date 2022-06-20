@@ -17,27 +17,43 @@ type ListNode struct {
 }
 
 func main() {
-	fmt.Println("生成顺序链表")
+	fmt.Println("空链表")
 	head := &ListNode{}
+	ShowListNode(head)
+	fmt.Println("生成顺序链表")
 	GenerateList(head, 10)
 	ShowListNode(head)
 	fmt.Println()
 	fmt.Println("链表反转")
-	reverselist := ReverseList(head)
-	ShowListNode(reverselist)
+	pre := ReverseList(head)
+	//pre := reverseListWithRecursion(nil,head)
+	ShowReverseListNode(pre)
 }
 
-// 实现链表翻转
+// 实现链表翻转 双指针法
 func ReverseList(head *ListNode) *ListNode {
-	var pre *ListNode
+	var pre *ListNode = nil
 	cur := head
-	for cur != nil {
+	for {
 		next := cur.Next
 		cur.Next = pre
 		pre = cur
 		cur = next
+		if cur == nil {
+			break
+		}
 	}
 	return pre
+}
+
+// 递归法
+func reverseListWithRecursion(pre, head *ListNode) *ListNode {
+	if head == nil {
+		return pre
+	}
+	next := head.Next
+	head.Next = pre
+	return reverseListWithRecursion(head, next)
 }
 
 // 创建顺序的链表 根据输入的结点数量生成指定的链表
@@ -71,7 +87,7 @@ func InsertNode(head *ListNode, newNode *ListNode) {
 	}
 }
 
-// 显示链表所有的结点
+// 显示顺序链表所有的结点
 func ShowListNode(head *ListNode) {
 	temp := head
 	if temp.Next == nil {
@@ -80,6 +96,21 @@ func ShowListNode(head *ListNode) {
 	}
 	for {
 		fmt.Printf("[%d] ==>", temp.Next.No)
+		temp = temp.Next
+		if temp.Next == nil {
+			break
+		}
+	}
+}
+
+func ShowReverseListNode(pre *ListNode) {
+	temp := pre
+	if temp.Next == nil {
+		fmt.Println("nil list")
+		return
+	}
+	for {
+		fmt.Printf("[%d] ==>", temp.No)
 		temp = temp.Next
 		if temp.Next == nil {
 			break
