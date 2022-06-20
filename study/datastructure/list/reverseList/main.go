@@ -103,6 +103,7 @@ func ShowListNode(head *ListNode) {
 	}
 }
 
+// 显示逆序链表的所有结点
 func ShowReverseListNode(pre *ListNode) {
 	temp := pre
 	if temp.Next == nil {
