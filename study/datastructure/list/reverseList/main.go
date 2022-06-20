@@ -17,24 +17,34 @@ type ListNode struct {
 }
 
 func main() {
+	fmt.Println("生成顺序链表")
 	head := &ListNode{}
-	node1 := &ListNode{No: 1}
-	node2 := &ListNode{No: 2}
-	node3 := &ListNode{No: 3}
-	InsertNode(head, node1)
-	InsertNode(head, node2)
-	InsertNode(head, node3)
+	GenerateList(head, 10)
 	ShowListNode(head)
+	fmt.Println()
+	fmt.Println("链表反转")
+	reverselist := ReverseList(head)
+	ShowListNode(reverselist)
 }
 
 // 实现链表翻转
-func ReverseList() {
-
+func ReverseList(head *ListNode) *ListNode {
+	var pre *ListNode
+	cur := head
+	for cur != nil {
+		next := cur.Next
+		cur.Next = pre
+		pre = cur
+		cur = next
+	}
+	return pre
 }
 
-// 创建顺序的链表
+// 创建顺序的链表 根据输入的结点数量生成指定的链表
 func GenerateList(head *ListNode, n int) {
-
+	for i := 1; i <= n; i++ {
+		InsertNode(head, &ListNode{No: i})
+	}
 }
 
 // 按照No顺序地插入结点
