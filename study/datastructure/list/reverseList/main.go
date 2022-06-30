@@ -24,10 +24,14 @@ func main() {
 	GenerateList(head, 10)
 	ShowListNode(head)
 	fmt.Println()
+	fmt.Println(getLength(head))
+	fmt.Println()
 	fmt.Println("链表反转")
 	pre := ReverseList(head)
 	//pre := reverseListWithRecursion(nil,head)
 	ShowReverseListNode(pre)
+	fmt.Println()
+	fmt.Println(getLength(pre))
 }
 
 // 实现链表翻转 双指针法
@@ -117,4 +121,11 @@ func ShowReverseListNode(pre *ListNode) {
 			break
 		}
 	}
+}
+
+func getLength(head *ListNode) (length int) {
+	for ; head != nil; head = head.Next {
+		length++
+	}
+	return
 }
