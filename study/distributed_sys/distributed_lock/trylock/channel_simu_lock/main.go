@@ -1,6 +1,9 @@
 package main
 
-import "sync"
+import (
+	"fmt"
+	"sync"
+)
 
 /*
   trylock 尝试加锁，如果加锁失败的话也不会阻塞，而会直接返回锁的结果
@@ -54,4 +57,5 @@ func main()  {
     }()
   }
   wg.Wait()
+  fmt.Println("try lock test finished")
 }
