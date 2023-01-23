@@ -1,4 +1,4 @@
-module ants-demo01
+module ants-demo02
 
 go 1.17
 
