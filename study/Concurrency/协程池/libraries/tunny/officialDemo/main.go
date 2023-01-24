@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"github.com/Jeffail/tunny"
 	"io/ioutil"
 	"net/http"
@@ -9,6 +10,7 @@ import (
 
 func main() {
 	numCPUs := runtime.NumCPU()
+	fmt.Println("numCPUS = ", numCPUs)
 
 	pool := tunny.NewFunc(numCPUs, func(payload interface{}) interface{} {
 		var result []byte
