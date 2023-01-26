@@ -63,7 +63,15 @@ func mistake2() {
 	var personArr []interface{}
 	personArr = append(personArr, persons)
 	fmt.Println(personArr...)
-	fmt.Println(personArr[0])
+	persons2 := personArr[0]
+	fmt.Println(persons2.([]Person))
+
+	sum := 0
+	for i := 0; i < len(persons2.([]Person)); i++ {
+		fmt.Println(persons2.([]Person)[i])
+		sum += persons2.([]Person)[i].GetNum()
+	}
+	fmt.Println(sum)
 	//fmt.Println(Add(personArr...)) // interface {} is []main.Person, not *main.Person
 
 }
