@@ -63,7 +63,7 @@ func mistake2() {
 	personArr = append(personArr, persons)
 	fmt.Println(personArr...)
 	fmt.Println(personArr[0])
-	//fmt.Println(Add(personArr...)) // interface {} is []main.Person, not main.Person
+	//fmt.Println(Add(personArr...)) // interface {} is []main.Person, not *main.Person
 
 }
 
