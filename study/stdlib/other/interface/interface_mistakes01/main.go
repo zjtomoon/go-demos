@@ -31,21 +31,21 @@ type Person struct {
 	Age int
 }
 
-func (p Person) GetNum() int {
+func (p *Person) GetNum() int {
 	return p.Age
 }
 
 func Add(s ...interface{}) int {
 	total := 0
 	for _, v := range s {
-		total += v.(Person).GetNum()
+		total += v.(*Person).GetNum()
 	}
 	return total
 }
 
 func Add2(s ...Person) int {
 	total := 0
-	for _,v := range s {
+	for _, v := range s {
 		total += v.GetNum()
 	}
 	return total
@@ -63,8 +63,8 @@ func mistake2() {
 	personArr = append(personArr, persons)
 	fmt.Println(personArr...)
 	fmt.Println(personArr[0])
-	// fmt.Println(Add(personArr...)) // interface {} is []main.Person, not main.Person
-	
+	//fmt.Println(Add(personArr...)) // interface {} is []main.Person, not main.Person
+
 }
 
 func TestInterface() {
