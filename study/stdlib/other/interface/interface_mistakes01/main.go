@@ -38,7 +38,8 @@ func (p *Person) GetNum() int {
 func Add(s ...interface{}) int {
 	total := 0
 	for _, v := range s {
-		total += v.(*Person).GetNum()
+		age := v.(*Person).GetNum()
+		total += age
 	}
 	return total
 }
